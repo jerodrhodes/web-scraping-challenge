@@ -47,7 +47,7 @@ def scrape():
     # visit the Mars weather twitter page
     weather_url = "https://twitter.com/marswxreport?lang=en"
     browser.visit(weather_url)
-
+    time.sleep(2)
     #get mars weather's latest tweet from the website
     weather_html = browser.html
     weather_soup = bs(weather_html, 'html.parser')
@@ -58,11 +58,11 @@ def scrape():
     # Mars facts table
     facts_url = "https://space-facts.com/mars/"
     browser.visit(facts_url)
-    mars_data = pd.read_html(facts_url)
-    mars_data = pd.DataFrame(mars_data[0])
-    mars_facts = mars_data.to_html(header = False, index = False)
+    mars_facts = pd.read_html(facts_url)
+    mars_table = pd.DataFrame(mars_facts[0])
+    mars_facts_table = mars_table.to_html(header = False, index = False)
 
-    mars_data['mars_facts_table'] = mars_facts
+    mars_data['mars_facts_table'] = mars_facts_table
 
     # Mars Hemispheres from USGS
     mars_hemisphere_url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
@@ -95,6 +95,9 @@ def scrape():
         hemi_dict['img_url'] = hemi_img_path
 
         hemi_dicts.append(hemi_dict)
+        print(hemi_dicts)
+    
+    print(mars_data)
     
     mars_data['hemisphere_imgs'] = hemi_dicts
 

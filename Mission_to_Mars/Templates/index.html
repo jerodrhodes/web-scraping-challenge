@@ -28,7 +28,7 @@
     <div class='row'>
         <div class='col-md-8'>
             <h3>Featured Mars Image</h3>
-            <img src={{mars_data.featured_image}}>
+            <img src="{{mars_data.featured_image}}" class = "img-responsive">
         </div>
         <div class='col-md-4'>
             <h3>Current Weather on Mars</h3>
@@ -42,22 +42,16 @@
     <div class='row'>
         <div class='col-md-12 text-center'>
         <h3>Mars Hemispheres</h3>
-        </div>
-    </div>
-    <div class='row'>
-        <div class = "col-md-12">
-            <h3><center>Mars Hemispheres</center></h3>
-            {% for hemisphere in mars_data.hemisphere_image_urls %}
+        {% for hemisphere in mars_data.hemisphere_imgs %}
                 <div class = "col-md-6">
                     <div class = "thumbnail">
-                        <img src = "{{hemisphere.image_url}}">
+                        <img src = "{{hemisphere.img_url}}">
                             <h3>{{hemisphere.title}}</h3>
                     </div>
                 </div>
             {% endfor %}
         </div>
     </div>
-
   </div>
 </body>
 
