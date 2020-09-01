@@ -35,7 +35,7 @@
 ### - Create a root route / that will query your Mongo database and pass the mars data into an HTML template to display the data.
 ### - Create a template HTML file called index.html that will take the mars data dictionary and display all of the data in the appropriate HTML elements. Use the following as a guide for what the final product should look like, but feel free to create your own design.
 
-![webpage image](Mission_to_Marsimg/Jumbotron_webscrape.png)
-![webpage image](img/Latest_news_webscrape.png)
-![webpage image](img/Top_hemispheres_webscrape.png)
-![webpage image](img/Bottom_hemispheres_webscrape.png)
+![webpage image](Mission_to_Mars/img/Jumbotron_webscrape.png)
+![webpage image](Mission_to_Mars/img/Latest_news_webscrape.png)
+![webpage image](Mission_to_Mars/img/Top_hemispheres_webscrape.png)
+![webpage image](Mission_to_Mars/img/Bottom_hemispheres_webscrape.png)
